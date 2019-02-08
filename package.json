@@ -1,0 +1,35 @@
+{
+  "name": "ieee_tu",
+  "version": "1.0.0",
+  "description": " THe official site of IEEE, Tezpur University Students' Branch<",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebishaldeb/IEEEE_TU.git"
+  },
+  "engines": {
+    "node": "11.4.0"
+  },
+  "author": "Bishal Deb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thebishaldeb/IEEEE_TU/issues"
+  },
+  "homepage": "https://github.com/thebishaldeb/IEEEE_TU#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "moment-js": "^1.1.15",
+    "mongoose": "^5.4.10",
+    "nodemon": "^1.18.9"
+  }
+}
