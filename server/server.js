@@ -17,7 +17,44 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // +++++++++++ GET  +++++++++++++++++++++
-// LogOut
+// Event
+app.get("/ieee/getEvent", (req, res) => {
+  let id = req.query.id;
+
+  Event.findById(id, (err, doc) => {
+    if (err) return res.status(400).send(err);
+    res.send(doc);
+  });
+});
+
+// All Events
+app.get("/ieee/books", (req, res) => {
+  let skip = parseInt(req.query.skip);
+  let limit = parseInt(req.query.limit);
+  let order = req.query.order;
+
+  Event.find()
+    .skip(skip)
+    .sort({ _id: order })
+    .limit(limit)
+    .exec((err, doc) => {
+      if (err) return res.status(400).send(err);
+      res.send(doc);
+    });
+});
+
+// Auth
+app.get("/ieee/auth", auth, (req, res) => {
+  res.json({
+    isAuth: true,
+    id: req.user._id,
+    email: req.user.email,
+    name: req.user.name,
+    lastname: req.user.lastname
+  });
+});
+
+// Events
 app.get("/ieee/events", (req, res) => {
   let id = req.query.id;
 
@@ -29,6 +66,7 @@ app.get("/ieee/events", (req, res) => {
   });
 });
 
+// LogOut
 app.get("/ieee/logout", auth, (req, res) => {
   req.user.deleteToken(req.token, (err, user) => {
     if (err) {
@@ -38,6 +76,7 @@ app.get("/ieee/logout", auth, (req, res) => {
   });
 });
 
+// Users
 app.get("/ieee/users", (req, res) => {
   User.find({}, (err, users) => {
     if (err) {
@@ -46,7 +85,21 @@ app.get("/ieee/users", (req, res) => {
     res.status(200).send(users);
   });
 });
+
 //++++++++++++ POST +++++++++++++++++++++
+// New Event
+app.post("/ieee/event", (req, res) => {
+  const event = new Event(req, body);
+
+  event.save((err, doc) => {
+    if (err) return res.status(400).send(err);
+    res.status(200).json({
+      post: true,
+      eventId: doc._id
+    });
+  });
+});
+
 // Register
 app.post("/ieee/register", (req, res) => {
   const user = new User(req.body);
@@ -85,6 +138,29 @@ app.post("//ieee/login", (req, res) => {
         });
       });
     });
+  });
+});
+
+//++++++++++++ UPDATE +++++++++++++++++++
+// Update Event
+app.post("/ieee/event_update", (req, res) => {
+  Event.findByIdAndUpdate(req.body._id, req.body, { new: true }, (err, doc) => {
+    if (err) return res.status(400).send(err);
+    res.json({
+      success: true,
+      doc
+    });
+  });
+});
+
+//++++++++++ DELETE +++++++++++++++++++++
+// Delete Event
+app.delete("/ieee/event_delete", (req, res) => {
+  let id = req.query.id;
+
+  Event.findByIdAndRemove(id, (err, doc) => {
+    if (err) return res.status(400).send(err);
+    res.json(true);
   });
 });
 
