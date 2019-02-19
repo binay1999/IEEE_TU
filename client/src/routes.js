@@ -2,7 +2,11 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 const Routes = props => {
-  return <div>Hello</div>;
+  return (
+    <Switch>
+      <Route path='/' exact component={Home}/>
+    </Switch>
+  )
 };
 
 export default Routes;
