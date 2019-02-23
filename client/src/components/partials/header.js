@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import {
   Nav,
   NavItem,
@@ -29,46 +29,59 @@ export default class Header extends React.Component {
   render() {
     return (
       <div>
-        <Link className='container' to='/ieee/login'>Admin Login</Link>
-        <Link className='container' to='/ieee/register'>Add Admin</Link>
+        <Link className="container" to="/ieee/login">
+          Admin Login
+        </Link>
+        <Link className="container" to="/ieee/logout">
+          Admin LogOut
+        </Link>
+        <Link className="container" to="/ieee/add-admin">
+          Add Admin
+        </Link>
         <div className="jumbotron">
-            IEEE - Students' Chapter, Tezpur University
+          IEEE - Students' Chapter, Tezpur University
         </div>
         <div>
           <Nav tabs>
             <NavItem>
               <NavLink active>
-              <Link className='container' to="/ieee">
-                About
-              </Link>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-            <NavLink>
-              <Link className='container' to="/ieee/events">Events</Link>
+                <Link className="container" to="/ieee">
+                  About
+                </Link>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-              <Link className='container' to="/ieee/gallery">Gallery</Link>
+                <Link className="container" to="/ieee/events">
+                  Events
+                </Link>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink>
+                <Link className="container" to="/ieee/gallery">
+                  Gallery
+                </Link>
               </NavLink>
             </NavItem>
             <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
               <DropdownToggle nav caret>
-               The Team
+                The Team
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem>
-                  <Link to='/ieee/working-team'>Working Team</Link>
+                  <Link to="/ieee/working-team">Working Team</Link>
                 </DropdownItem>
-                <DropdownItem> 
-                  <Link to='/ieee/founding-team'>Founding Team</Link>
+                <DropdownItem>
+                  <Link to="/ieee/founding-team">Founding Team</Link>
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
             <NavItem>
               <NavLink>
-              <Link className='container' to="/ieee/contact">Contact</Link>
+                <Link className="container" to="/ieee/contact">
+                  Contact
+                </Link>
               </NavLink>
             </NavItem>
           </Nav>

@@ -28,7 +28,7 @@ app.get("/ieee/getEvent", (req, res) => {
 });
 
 // All Events
-app.get("/ieee/books", (req, res) => {
+app.get("/ieee/events", (req, res) => {
   let skip = parseInt(req.query.skip);
   let limit = parseInt(req.query.limit);
   let order = req.query.order;
