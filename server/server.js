@@ -86,7 +86,7 @@ app.get("/ieee/users", (req, res) => {
   });
 });
 
-//++++++++++++ POST +++++++++++++++++++++
+//++++++++++++ event +++++++++++++++++++++
 // New Event
 app.post("/ieee/event", (req, res) => {
   const event = new Event(req, body);
@@ -94,7 +94,7 @@ app.post("/ieee/event", (req, res) => {
   event.save((err, doc) => {
     if (err) return res.status(400).send(err);
     res.status(200).json({
-      post: true,
+      event: true,
       eventId: doc._id
     });
   });

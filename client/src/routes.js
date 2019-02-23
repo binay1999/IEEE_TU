@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/body/home";
-import Events from "./components/body/posts";
+import Events from "./components/body/events";
 
 import Layout from "./components/layout";
 

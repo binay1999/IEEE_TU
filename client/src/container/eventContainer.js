@@ -7,9 +7,9 @@ class EventsContainer extends Component {
       this.props.dispatch(getEvents(3, 0, 'desc'))
   }
 
-  renderItems = (posts) => (
-      this.posts ?
-        this.posts.map( item => (
+  renderItems = (events) => (
+      this.events ?
+        this.events.map( item => (
             <div>
                 Ityems
             </div>
@@ -20,7 +20,7 @@ class EventsContainer extends Component {
   render() {
     return (
         <div>
-            {this.renderItems(this.props.posts)}
+            {this.renderItems(this.props.events)}
         </div>
     );
   }
@@ -28,7 +28,7 @@ class EventsContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    posts: state.posts
+    events: state.events
   };
 }
 
