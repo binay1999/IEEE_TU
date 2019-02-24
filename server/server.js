@@ -45,18 +45,6 @@ app.get("/ieee/auth", auth, (req, res) => {
   });
 });
 
-// Events
-app.get("/ieee/events", (req, res) => {
-  let id = req.query.id;
-
-  Event.findById(id, (err, doc) => {
-    if (err) {
-      return res.status(400).send(err);
-    }
-    res.send(doc);
-  });
-});
-
 // LogOut
 app.get("/ieee/logout", auth, (req, res) => {
   req.user.deleteToken(req.token, (err, user) => {
