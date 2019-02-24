@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/body/home";
 import Events from "./components/body/events";
-
+import Login from "./container/admin/login";
 import Layout from "./components/layout";
 
 const Routes = props => {
@@ -12,7 +12,7 @@ const Routes = props => {
         <Route path="/ieee" exact component={Home} />
         <Route path="/ieee/events" exact component={Events} />
         {/* <Route path='/ieee/contact' exact component={Contact}/> */}
-        {/* <Route path='/ieee/login' exact component={Login}/> */}
+        <Route path="/ieee/login" exact component={Login} />
         {/* <Route path='/ieee/add-admin' exact component={Register}/> */}
         {/* <Route path='/ieee/logout' exact component={Home}/> */}
         {/* <Route path='/ieee/gallery' exact component={Gallery}/> */}

@@ -17,15 +17,6 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // +++++++++++ GET  +++++++++++++++++++++
-// Event
-app.get("/ieee/getEvent", (req, res) => {
-  let id = req.query.id;
-
-  Event.findById(id, (err, doc) => {
-    if (err) return res.status(400).send(err);
-    res.send(doc);
-  });
-});
 
 // All Events
 app.get("/ieee/events", (req, res) => {
@@ -77,7 +68,7 @@ app.get("/ieee/logout", auth, (req, res) => {
 });
 
 // Users
-app.get("/ieee/users", (req, res) => {
+app.get("/ieee/working-team", (req, res) => {
   User.find({}, (err, users) => {
     if (err) {
       return res.status(400).send(err);
@@ -88,7 +79,7 @@ app.get("/ieee/users", (req, res) => {
 
 //++++++++++++ event +++++++++++++++++++++
 // New Event
-app.post("/ieee/event", (req, res) => {
+app.post("/ieee/events", (req, res) => {
   const event = new Event(req, body);
 
   event.save((err, doc) => {
@@ -101,7 +92,7 @@ app.post("/ieee/event", (req, res) => {
 });
 
 // Register
-app.post("/ieee/register", (req, res) => {
+app.post("/ieee/add-admin", (req, res) => {
   const user = new User(req.body);
 
   user.save((err, doc) => {
@@ -114,7 +105,7 @@ app.post("/ieee/register", (req, res) => {
 });
 
 // Login
-app.post("//ieee/login", (req, res) => {
+app.post("/ieee/login", (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     if (!user)
       return res.json({
