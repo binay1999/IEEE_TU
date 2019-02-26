@@ -29,7 +29,7 @@ class EventsContainer extends Component {
     return (
       <div>
         {this.renderItems(this.props.events)}
-        <div className="loadmore text-center" onclick={this.loadmore}>
+        <div className="loadmore text-center" onClick={this.loadmore}>
           Load More
         </div>
       </div>

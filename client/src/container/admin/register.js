@@ -57,7 +57,7 @@ class Register extends Component {
   };
 
   showUsers = user =>
-    user.users === true
+    user.users
       ? user.users.map(item => (
           <tr key={item._id}>
             <td>{item.name}</td>
