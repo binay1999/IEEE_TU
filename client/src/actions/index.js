@@ -46,3 +46,53 @@ export function addEvent(event) {
     payload: request
   };
 }
+
+export function clearNewEvent(params) {
+  return {
+    type: "CLEAR_EVENT",
+    payload: {}
+  };
+}
+
+export function getEvent(id) {
+  const request = axios
+    .get(`/ieee/getEvent?id=${id}`)
+    .then(response => response.data);
+
+  return {
+    type: "GET_EVENT",
+    payload: request
+  };
+}
+
+export function updateEvent(data) {
+  const request = axios
+    .post(`/ieee/event_update`, data)
+    .then(response => response.data);
+  return {
+    type: "UPDATE_EVENT",
+    payload: request
+  };
+}
+
+export function deleteEvent(params) {
+  const request = axios
+    .delete(`/ieee/event_delete?id=${id}`)
+    .then(response => response.data);
+
+  return {
+    type: "DELETE_EVENT",
+    payload: request
+  };
+}
+
+export function clearEvent() {
+  return {
+    type: "CLEAR_DELETEDBOOK",
+    payload: {
+      book: null,
+      updateEvent: false,
+      postDeleted: false
+    }
+  };
+}

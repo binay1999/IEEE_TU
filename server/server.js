@@ -18,6 +18,15 @@ app.use(cookieParser());
 
 // +++++++++++ GET  +++++++++++++++++++++
 
+app.get("/ieee/getEvent", (req, res) => {
+  let id = req.query.id;
+
+  Event.findById(id, (err, doc) => {
+    if (err) return res.status(400).send(err);
+    res.send(doc);
+  });
+});
+
 // All Events
 app.get("/ieee/events", (req, res) => {
   let skip = parseInt(req.query.skip);

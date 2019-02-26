@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { addEvent, clearNewEvent } from "../../actions";
+import { getEvent, updateEvent, clearEvent, deleteEvent } from "../../actions";
 
-class AddEvent extends Component {
+class EditEvent extends PureComponent {
   state = {
     formdata: {
+      _id: this.props.match.params.id,
       title: "",
       image: "",
       description: "",
@@ -23,31 +23,56 @@ class AddEvent extends Component {
     });
   };
 
-  submitFOrm = e => {
+  submitForm = e => {
     e.preventDefault();
-    this.props.dispatch(
-      addEvent({
-        ...this.state.formdata
-      })
-    );
+    this.props.dispatch(updateEvent(this.state.formdata));
   };
 
-  showNewEvent = event =>
-    event.post ? (
-      <div>
-        Cool !! <Link to={"/ieee/events"}>Click to see the post!!!</Link>
-      </div>
-    ) : null;
+  componentWillMount() {
+    this.props.dispatch(getEvent(this.props.match.params.id));
+  }
 
-  componentWillUnmount() {
-    this.props.dispatch(clearNewEvent());
+  deletePost = () => {
+    this.props.dispatch(deleteEvent(this.props.match.params.id));
+  };
+
+  redirectUser = () => {
+    setTimeout(() => {
+      this.props.history.push("/ieee/events");
+    }, 3000);
+  };
+
+  componentWillReceiveProps(nextProps) {
+    let event = nextProps.events.event;
+    this.setState({
+      formdata: {
+        _id: event._id,
+        title: event.title,
+        image: event.image,
+        description: event.description,
+        date: event.date
+      }
+    });
+  }
+
+  componentWillUnmount(){
+    this.props.dispatch(clearEvent())
   }
 
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.submitFOrm}>
-          <h2 className="text-center">Add Event</h2>
+        {this.props.events.updateEvent ? (
+          <div>Event Updated! Go back to events to see the changes.</div>
+        ) : null}
+        {this.props.events.postDeleted ? (
+          <div>
+            Post Deleted!!!
+            {this.redirectUser()}
+          </div>
+        ) : null}
+        <form onSubmit={this.submitForm}>
+          <h2 className="text-center">Edit Event</h2>
           <hr />
           <div>
             <label>Title:</label>
@@ -87,11 +112,11 @@ class AddEvent extends Component {
           </div>
           <br />
           <button className="btn btn-block btn-warning" type="submit">
-            Add Event
+            Edit Event
           </button>
-          {this.props.events.newevent
-            ? this.showNewEvent(this.props.events.newevent)
-            : null}
+          <div className="btn btn-block btn-danger" onClick={this.deletePost}>
+            Delete Post
+          </div>
         </form>
       </div>
     );
@@ -105,5 +130,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(AddEvent);
- 
+export default connect(mapStateToProps)(EditEvent);
