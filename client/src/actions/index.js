@@ -35,3 +35,14 @@ export function auth() {
     payload: request
   };
 }
+
+export function addEvent(event) {
+  const request = axios
+    .post("/ieee/events", event)
+    .then(response => response.data);
+
+  return {
+    type: "ADD_EVENT",
+    payload: request
+  };
+}
