@@ -62,15 +62,18 @@ class EditEvent extends PureComponent {
   render() {
     return (
       <div className="container">
+
         {this.props.events.updateEvent ? (
-          <div>Event Updated! Go back to events to see the changes.</div>
+          <div>{this.redirectUser()}</div>
         ) : null}
+        
         {this.props.events.postDeleted ? (
           <div>
             Post Deleted!!!
             {this.redirectUser()}
           </div>
         ) : null}
+
         <form onSubmit={this.submitForm}>
           <h2 className="text-center">Edit Event</h2>
           <hr />
@@ -124,7 +127,6 @@ class EditEvent extends PureComponent {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     events: state.events
   };

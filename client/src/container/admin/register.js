@@ -57,7 +57,7 @@ class Register extends Component {
   };
 
   showUsers = user =>
-    user.users
+    user.users === true
       ? user.users.map(item => (
           <tr key={item._id}>
             <td>{item.name}</td>
@@ -68,7 +68,6 @@ class Register extends Component {
       : null;
 
   render() {
-    console.log(this.props);
     let user = this.props.user;
     return (
       <div>
@@ -127,7 +126,7 @@ class Register extends Component {
                 <th>Email</th>
               </tr>
             </thead>
-            {/* <tbody>{this.showUsers(user)}</tbody> */}
+            <tbody>{this.showUsers(user)}</tbody>
           </table>
         </div>
       </div>

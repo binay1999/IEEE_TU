@@ -7,19 +7,19 @@ class EventsContainer extends Component {
     this.props.dispatch(getEvents(3, 0, "desc"));
   }
 
-  renderItems = events =>
-    this.events ? (
-      this.events.map(item => (
+  renderItems = (events) => (
+    events.list === true ? (
+      events.list.map(item => (
         <div>
-          <h2>{events.title}</h2>
-          <img src="{events.image}" />
-          <p>{events.description}</p>
-          <p>{events.date}</p>
+          <h2>{item.title}</h2>
+          <img src="{item.image}" />
+          <p>{item.description}</p>
+          <p>{item.date}</p>
         </div>
       ))
     ) : (
       <div>No Events yet!</div>
-    );
+    ));
   loadmore = () => {
     let count = this.props.events.list.length;
     this.props.dispatch(getEvents(3, count, "desc", this.props.events.list));

@@ -85,7 +85,7 @@ app.get("/ieee/working-team", (req, res) => {
 
 //++++++++++++ event +++++++++++++++++++++
 // New Event
-app.post("/ieee/events", (req, res) => {
+app.post("/ieee/event", (req, res) => {
   const event = new Event(req, body);
 
   event.save((err, doc) => {
@@ -112,7 +112,7 @@ app.post("/ieee/add-admin", (req, res) => {
 
 // Login
 app.post("/ieee/login", (req, res) => {
-  User.findOne({ email: req.body.email }, (err, user) => {
+  User.findOne({ "email": req.body.email }, (err, user) => {
     if (!user)
       return res.json({
         isAuth: false,

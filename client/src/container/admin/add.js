@@ -23,7 +23,7 @@ class AddEvent extends Component {
     });
   };
 
-  submitFOrm = e => {
+  submitForm = e => {
     e.preventDefault();
     this.props.dispatch(
       addEvent({
@@ -46,7 +46,7 @@ class AddEvent extends Component {
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.submitFOrm}>
+        <form onSubmit={this.submitForm}>
           <h2 className="text-center">Add Event</h2>
           <hr />
           <div>
@@ -99,7 +99,6 @@ class AddEvent extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     events: state.events
   };
