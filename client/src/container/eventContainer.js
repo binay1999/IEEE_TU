@@ -12,7 +12,7 @@ class EventsContainer extends Component {
       events.list.map(item => (
         <div>
           <h2>{item.title}</h2>
-          <img src="{item.image}" />
+          <img src="{item.image}" alt=""/>
           <p>{item.description}</p>
           <p>{item.date}</p>
         </div>

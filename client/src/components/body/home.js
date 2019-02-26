@@ -4,8 +4,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        {this.props.user ? <div>Login</div> : <div>LOVE</div>}
-        Home
+        The Home Page will go here!!!
       </div>
     );
   }

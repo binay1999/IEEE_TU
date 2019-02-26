@@ -36,7 +36,7 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        {this.props.user.login == false? (
+        {this.props.user.login === false? (
           <div>
             <Link className="container" to="/ieee/logout">
               Admin LogOut
