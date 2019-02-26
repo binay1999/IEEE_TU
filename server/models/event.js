@@ -1,5 +1,4 @@
-var mongoose = require("mongoose"),
-  config = require("./../config/config").get(process.env.NODE_ENV);
+var mongoose = require("mongoose")
 
 const eventSchema = mongoose.Schema({
   title: {
@@ -21,7 +20,7 @@ const eventSchema = mongoose.Schema({
     type: Number,
     required: true
   }
-});
+},{timestamps:true});
 
 const Event = mongoose.model("Event", eventSchema);
 

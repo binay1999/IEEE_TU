@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/thebishaldeb/IEEEE_TU#readme",
   "dependencies": {
-    "axios": "^0.17.1",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
