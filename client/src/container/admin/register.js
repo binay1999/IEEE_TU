@@ -28,7 +28,7 @@ class Register extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.user.register == false) {
+    if (nextProps.user.register === false) {
       this.setState({ error: "Error, try again!!!" });
     } else {
       this.setState({

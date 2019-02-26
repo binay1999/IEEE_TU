@@ -22,7 +22,6 @@ const Routes = () => {
         {/* <Route path='/ieee/contact' exact component={Contact}/> */}
         <Route path="/ieee/login" exact component={Auth(Login, false)} />
         <Route path='/ieee/add-admin' exact component={Auth(Register, false)} />
-        {/* <Route path='/ieee/logout' exact component={Home}/> */}
         {/* <Route path='/ieee/gallery' exact component={Gallery}/> */}
         {/* <Route path='/ieee/working-team' exact component={WorkingTeam}/> */}
         {/* <Route path='/ieee/founding-team' exact component={FoundingTeam}/> */}

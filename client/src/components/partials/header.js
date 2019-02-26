@@ -9,8 +9,15 @@ import {
   DropdownMenu,
   NavLink
 } from "reactstrap";
+import { connect } from "react-redux";
 
-export default class Header extends React.Component {
+const Component = ({user}) => {
+  return(
+    <Header user={user}/>
+  )
+}
+
+class Header extends React.Component {
   constructor(props) {
     super(props);
 
@@ -29,15 +36,20 @@ export default class Header extends React.Component {
   render() {
     return (
       <div>
-        <Link className="container" to="/ieee/login">
-          Admin Login
-        </Link>
-        <Link className="container" to="/ieee/logout">
-          Admin LogOut
-        </Link>
-        <Link className="container" to="/ieee/add-admin">
-          Add Admin
-        </Link>
+        {this.props.user.login == false? (
+          <div>
+            <Link className="container" to="/ieee/logout">
+              Admin LogOut
+            </Link>
+            <Link className="container" to="/ieee/add-admin">
+              Add Admin
+            </Link>
+          </div>
+        ) : (
+          <Link className="container" to="/ieee/login">
+            Admin Login
+          </Link>
+        )}
         <div className="jumbotron">
           IEEE - Students' Chapter, Tezpur University
         </div>
@@ -90,3 +102,11 @@ export default class Header extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  };
+}
+
+export default connect(mapStateToProps)(Component);
