@@ -54,6 +54,15 @@ app.get("/ieee/auth", auth, (req, res) => {
   });
 });
 
+// User
+
+app.get("/ieee/users", (req, res) => {
+  User.find({}, (err, users) => {
+    if (err) return res.status(400).send(err);
+    res.status(200).send(users);
+  });
+});
+
 // LogOut
 app.get("/ieee/logout", auth, (req, res) => {
   req.user.deleteToken(req.token, (err, user) => {
