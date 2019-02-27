@@ -6,6 +6,7 @@ import { addEvent, clearNewEvent } from "../../actions";
 class AddEvent extends Component {
   state = {
     formdata: {
+      error: "",
       title: "",
       image: "",
       description: "",
@@ -32,15 +33,16 @@ class AddEvent extends Component {
     );
   };
 
-  showNewEvent = event =>
-    event.post ? (
-      <div>
-        Cool !! <Link to={"/ieee/events"}>Click to see the post!!!</Link>
-      </div>
-    ) : null;
-
   componentWillUnmount() {
     this.props.dispatch(clearNewEvent());
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.newevent === null) {
+      this.setState({ error: "Error, try again!!!" });
+    } else {
+      nextProps.history.push("/ieee/events");
+    }
   }
 
   render() {
@@ -89,9 +91,7 @@ class AddEvent extends Component {
           <button className="btn btn-block btn-warning" type="submit">
             Add Event
           </button>
-          {this.props.events.newevent
-            ? this.showNewEvent(this.props.events.newevent)
-            : null}
+          <div>{this.state.error}</div>
         </form>
       </div>
     );
@@ -105,4 +105,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(AddEvent);
- 

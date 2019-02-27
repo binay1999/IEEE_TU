@@ -10,7 +10,7 @@ export default function(state = {}, action) {
       return { ...state, event: action.payload };
     case "UPDATE_EVENT":
       return {
-        ...state,
+        ...state, 
         updateEvent: action.payload.success,
         event: action.payload.doc
       };

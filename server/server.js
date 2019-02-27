@@ -85,13 +85,13 @@ app.get("/ieee/working-team", (req, res) => {
 
 //++++++++++++ event +++++++++++++++++++++
 // New Event
-app.post("/ieee/event", (req, res) => {
-  const event = new Event(req, body);
+app.post("/ieee/events", (req, res) => {
+  const event = new Event(req.body);
 
   event.save((err, doc) => {
     if (err) return res.status(400).send(err);
     res.status(200).json({
-      event: true,
+      post: true,
       eventId: doc._id
     });
   });

@@ -17,7 +17,7 @@ const eventSchema = mongoose.Schema({
     maxlength: 13
   },
   date: {
-    type: Number,
+    type: String,
     required: true
   }
 },{timestamps:true});

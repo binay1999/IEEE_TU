@@ -28,7 +28,7 @@ export function addEvent(event) {
   };
 }
 
-export function clearNewEvent(params) {
+export function clearNewEvent() {
   return {
     type: "CLEAR_EVENT",
     payload: {}
@@ -99,7 +99,7 @@ export function auth() {
   };
 }
 
-export function getUsers(params) {
+export function getUsers() {
   const request = axios.get("/ieee/users").then(response => response.data);
 
   return {
