@@ -1,8 +1,34 @@
 import React, { Component } from "react";
-import EventsContainer from "../../container/eventContainer";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { getEvents } from "../../actions";
 
 class Events extends Component {
+  componentWillMount() {
+    this.props.dispatch(getEvents());
+  }
+
+  showEvents = event => 
+    event.list
+      ? event.list.map(item => (
+        <div key={item._id} className="card">
+        { this.props.user.login.isAuth === true?
+          <Link to={`/ieee/edit-event/${item._id}`}>Edit</Link>
+        : null
+        }
+          <div className="card-title">{item.title}</div>
+          <div className="card-body">
+          <img src={item.image} alt="" />
+          <p>{item.description}</p>
+          <p className="date">{item.date}</p>
+          </div>
+        </div>
+        ))
+      : (
+          <div>No Events yet!</div>
+        );
+
+
   render(){
     return (
       <div>
@@ -11,10 +37,18 @@ class Events extends Component {
             Add Event
           </Link>
         ) : null }
-        <EventsContainer />
+        <div>
+          {this.showEvents(this.props.events)}
+        </div>
       </div>
     );
   }
 }
 
-export default Events;
+function mapStateToProps(state) {
+  return {
+    events: state.events
+  };
+}
+
+export default connect(mapStateToProps)(Events);
