@@ -33,32 +33,36 @@ class Login extends Component {
     let user = this.props.user;
     return (
       <div>
-        <form onSubmit={this.submitForm}>
-          <div className="container">
-            <h3 className="text-center">Admin Login</h3>
-            <input
-              className="form-control"
-              type="email"
-              placeholder="Enter your email"
-              value={this.state.email}
-              onChange={this.handleInputEmail}
-              required
-            />
-            <input
-              className="form-control"
-              type="password"
-              placeholder="Enter your password"
-              value={this.state.password}
-              onChange={this.handleInputPassword}
-              required
-            />
-            <button className="btn btn-block btn-primary" type="submit">
-              Login
-            </button>
+        {user.login.isAuth === null || user.login.error === true ? (
+          <form onSubmit={this.submitForm}>
+            <div className="container">
+              <h3 className="text-center">Admin Login</h3>
+              <input
+                className="form-control"
+                type="email"
+                placeholder="Enter your email"
+                value={this.state.email}
+                onChange={this.handleInputEmail}
+                required
+              />
+              <input
+                className="form-control"
+                type="password"
+                placeholder="Enter your password"
+                value={this.state.password}
+                onChange={this.handleInputPassword}
+                required
+              />
+              <button className="btn btn-block btn-primary" type="submit">
+                Login
+              </button>
 
-            <div>{user.login ? <div>{user.login.message}</div> : null}</div>
-          </div>
-        </form>
+              <div>{user.login ? <div>{user.login.message}</div> : null}</div>
+            </div>
+          </form>
+        ) : (
+          <div>Already Logged in.</div>
+        )}
       </div>
     );
   }

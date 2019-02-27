@@ -34,9 +34,18 @@ class Header extends React.Component {
   }
 
   render() {
+    // console.log(this.props)
+    let user = this.props.user.usser
+    // console.log(user.login.isAuth)
     return (
       <div>
-        {this.props.user.login ? (
+        {user !== undefined ? (
+          <div>
+          {user.login.isAuth !== true || user.login.error !== null ? (
+            <Link className="container" to="/ieee/login">
+              Admin Login
+            </Link> 
+          ) : (
           <div>
             <Link className="container" to="/ieee/logout">
               Admin LogOut
@@ -45,10 +54,12 @@ class Header extends React.Component {
               Add Admin
             </Link>
           </div>
+          )}
+        </div>
         ) : (
-          <Link className="container" to="/ieee/login">
-            Admin Login
-          </Link>
+        <Link className="container" to="/ieee/login">
+          Admin Login
+        </Link> 
         )}
         <div className="jumbotron">
           IEEE - Students' Chapter, Tezpur University
