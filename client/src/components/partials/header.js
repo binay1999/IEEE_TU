@@ -32,20 +32,16 @@ class Header extends React.Component {
       dropdownOpen: !this.state.dropdownOpen
     });
   }
-
+  
   render() {
-    // console.log(this.props)
-    let user = this.props.user.usser
-    // console.log(user.login.isAuth)
+    let user = this.props.user
     return (
       <div>
-        {user !== undefined ? (
-          <div>
-          {user.login.isAuth !== true || user.login.error !== null ? (
-            <Link className="container" to="/ieee/login">
-              Admin Login
-            </Link> 
-          ) : (
+        {user.login === undefined || user.login.error === true || user.login.isAuth === null ? (
+          <Link className="container" to="/ieee/login">
+            Admin Login
+          </Link>
+        ) : (
           <div>
             <Link className="container" to="/ieee/logout">
               Admin LogOut
@@ -54,12 +50,6 @@ class Header extends React.Component {
               Add Admin
             </Link>
           </div>
-          )}
-        </div>
-        ) : (
-        <Link className="container" to="/ieee/login">
-          Admin Login
-        </Link> 
         )}
         <div className="jumbotron">
           IEEE - Students' Chapter, Tezpur University
