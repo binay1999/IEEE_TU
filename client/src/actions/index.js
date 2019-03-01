@@ -1,15 +1,6 @@
 import axios from "axios";
-
-export function getEvents(limit = 10, start = 0, order = "asc", list = "") {
-  const request = axios
-    .get(`/ieee/events?limit=${limit}&skip=${start}&order=${order}`)
-    .then(response => {
-      if (list) {
-        return [...list, ...response.data];
-      } else {
-        return response.data;
-      }
-    });
+export function getEvents() {
+  const request = axios.get("/ieee/events").then(response => response.data);
 
   return {
     type: "GET_EVENTS",

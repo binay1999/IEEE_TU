@@ -8,13 +8,11 @@ const eventSchema = mongoose.Schema({
   },
   description: {
     type: String,
-    required: true,
-    maxlength: 100
+    required: true
   },
   image: {
     type: String,
-    required: true,
-    maxlength: 13
+    required: true
   },
   date: {
     type: String,

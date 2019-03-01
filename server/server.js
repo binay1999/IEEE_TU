@@ -29,18 +29,10 @@ app.get("/ieee/getEvent", (req, res) => {
 
 // All Events
 app.get("/ieee/events", (req, res) => {
-  let skip = parseInt(req.query.skip);
-  let limit = parseInt(req.query.limit);
-  let order = req.query.order;
-
-  Event.find()
-    .skip(skip)
-    .sort({ _id: order })
-    .limit(limit)
-    .exec((err, doc) => {
-      if (err) return res.status(400).send(err);
-      res.send(doc);
-    });
+  Event.find({}, (err, users) => {
+    if (err) return res.status(400).send(err);
+    res.status(200).send(users);
+  })
 });
 
 // Auth

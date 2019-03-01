@@ -36,10 +36,10 @@ class EditEvent extends PureComponent {
     this.props.dispatch(deleteEvent(this.props.match.params.id));
   };
 
-  redirectUser = () => {
+  redirectUser = time => {
     setTimeout(() => {
       this.props.history.push("/ieee/events");
-    }, 3000);
+    }, time);
   };
 
   componentWillReceiveProps(nextProps) {
@@ -55,23 +55,15 @@ class EditEvent extends PureComponent {
     });
   }
 
-  componentWillUnmount(){
-    this.props.dispatch(clearEvent())
+  componentWillUnmount() {
+    this.props.dispatch(clearEvent());
   }
 
   render() {
     return (
       <div className="container">
-
         {this.props.events.updateEvent ? (
-          <div>{this.redirectUser()}</div>
-        ) : null}
-        
-        {this.props.events.postDeleted ? (
-          <div>
-            Post Deleted!!!
-            {this.redirectUser()}
-          </div>
+          <div>{this.redirectUser(0)}</div>
         ) : null}
 
         <form onSubmit={this.submitForm}>
@@ -121,6 +113,13 @@ class EditEvent extends PureComponent {
             Delete Post
           </div>
         </form>
+
+        {this.props.events.postDeleted ? (
+          <div className="btn btn-block btn-success">
+            Post Deleted!!!
+            {this.redirectUser(2000)}
+          </div>
+        ) : null}
       </div>
     );
   }
