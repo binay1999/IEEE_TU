@@ -18,6 +18,7 @@
 ### Installing depencencies and running the app
 * Fork the repository
 * Clone the repository
+* Install create-react-app `npm install -g create-react-app`
 * Install the dependencies by `npm install` for server and `npm install client` for client.
 * Run in development mode by `npm run dev`
 
