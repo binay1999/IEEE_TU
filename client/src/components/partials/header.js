@@ -59,7 +59,7 @@ class Header extends React.Component {
               <img src="https://i.imgur.com/SFj3dEd.png" alt="tu logo" height="70px" width="70px"/>
             </a>
             <div class="header-right">
-              <a class="ieeesite" href="https://www.ieee.org/">IEEE Site</a>
+              <a class="ieeesite" href="https://www.ieee.org/">IEEE.ORG</a>
               <a class="Facebook" href="https://www.facebook.com/ieee.tezu/">
               <img src="https://i.imgur.com/bnscNE8.png" alt="fb" height="28px" width="28px"/>
               </a>

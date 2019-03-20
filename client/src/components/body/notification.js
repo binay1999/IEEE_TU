@@ -5,7 +5,10 @@ class Notifications extends React.Component {
   render() {
     return (
       <div class="nbox">
-        NOTBOX will go here
+        <div class="header">NOTIFICATIONS</div>
+        <div class="content">
+
+        </div>
       </div>
     );
   }
