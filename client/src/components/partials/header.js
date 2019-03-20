@@ -1,4 +1,5 @@
 import React from "react";
+import './header.css'
 import { Link } from "react-router-dom";
 import {
   Nav,
@@ -51,8 +52,22 @@ class Header extends React.Component {
             </Link>
           </div>
         )}
-        <div className="jumbotron">
-          IEEE - Students' Chapter, Tezpur University
+        <div class="jumbotron">
+            <img src="https://i.imgur.com/oWyvKlw.jpg" alt="ieee logo" class="ieeelogo" height="70px" width="250px"/>
+            <img src="https://i.imgur.com/p3I3ZCO.png" alt="banner" class="banner" height="70px" width="1000px"/>
+            <a class="logoright" href="http://www.tezu.ernet.in/">
+              <img src="https://i.imgur.com/SFj3dEd.png" alt="tu logo" height="70px" width="70px"/>
+            </a>
+            <div class="header-right">
+              <a class="ieeesite" href="https://www.ieee.org/">IEEE Site</a>
+              <a class="Facebook" href="https://www.facebook.com/ieee.tezu/">
+              <img src="https://i.imgur.com/bnscNE8.png" alt="fb" height="28px" width="28px"/>
+              </a>
+               <a class="Youtube" href="https://www.youtube.com/channel/UC2AOTkwhNmrRfTi7M532FJw">
+               <img src="https://i.imgur.com/lKirU05.png" alt="yt" height="30px" width="30px"/>
+              </a>
+            </div>
+              
         </div>
         <div>
           <Nav tabs>
