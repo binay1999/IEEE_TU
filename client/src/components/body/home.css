@@ -1,3 +1,43 @@
-main{
- 
+body{margin:0px;}
+@keyframes slides {
+0% { left: 0%; }
+25% {left:0%;}
+50% { left: -100%; }
+75% {left:-100%;}
+100%{left:-200%;}
+
+
+
+}
+
+#img1{
+    
+}
+#img2{
+  
+}    
+#img3{
+   
+}
+#slider { 
+    overflow: hidden; 
+    position: absolute;
+    left:100px;
+}
+
+ figure img {
+      width:33%; float: left; 
+    }
+
+ figure { 
+  position: relative;
+  width: 303%;
+  left: 0;
+  margin:0px;
+  animation: 10s slides infinite; 
+}
+
+h1{
+    text-align:center;
+    color:magenta;
 }
