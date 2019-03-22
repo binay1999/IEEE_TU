@@ -1,4 +1,5 @@
 import React from "react";
+import './header.css'
 import { Link } from "react-router-dom";
 import {
   Nav,
@@ -37,12 +38,16 @@ class Header extends React.Component {
     let user = this.props.user
     return (
       <div>
+        
         {user.login === undefined || user.login.error === true || user.login.isAuth === null ? (
+          <div className="admin1">
           <Link className="container" to="/ieee/login">
             Admin Login
           </Link>
+          </div>
+        
         ) : (
-          <div>
+          <div class="admin2">
             <Link className="container" to="/ieee/logout">
               Admin LogOut
             </Link>
@@ -51,49 +56,64 @@ class Header extends React.Component {
             </Link>
           </div>
         )}
-        <div className="jumbotron">
-          IEEE - Students' Chapter, Tezpur University
+       
+        <div class="jumbotron">
+            <img src="https://i.imgur.com/oWyvKlw.jpg" alt="ieee logo" class="ieeelogo" height="70px" width="250px"/>
+            <img src="https://i.imgur.com/p3I3ZCO.png" alt="banner" class="banner" height="70px" width="1000px"/>
+            <a class="logoright" href="http://www.tezu.ernet.in/">
+              <img src="https://i.imgur.com/SFj3dEd.png" alt="tu logo" height="80px" width="80px"/>
+            </a>
+            <div class="header-right">
+              <a class="ieeesite" href="https://www.ieee.org/">IEEE.ORG</a>
+              <a class="Facebook" href="https://www.facebook.com/ieee.tezu/">
+              <img src="https://i.imgur.com/bnscNE8.png" alt="fb" height="20px" width="20px"/>
+              </a>
+               <a class="Youtube" href="https://www.youtube.com/channel/UC2AOTkwhNmrRfTi7M532FJw">
+               <img src="https://i.imgur.com/lKirU05.png" alt="yt" height="21px" width="21px"/>
+              </a>
+            </div>
+              
         </div>
-        <div>
+        <div class="tabs">
           <Nav tabs>
             <NavItem>
-              <NavLink active>
+            <NavLink active>
                 <Link className="container" to="/ieee">
-                  About
-                </Link>
+                  HOME
+                  </Link>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
                 <Link className="container" to="/ieee/events">
-                  Events
+                  EVENTS
                 </Link>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
                 <Link className="container" to="/ieee/gallery">
-                  Gallery
+                  GALLERY
                 </Link>
               </NavLink>
             </NavItem>
             <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-              <DropdownToggle nav caret>
-                The Team
+              <DropdownToggle nav caret className="drop">
+                IEEE TEAM
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem>
-                  <Link to="/ieee/working-team">Working Team</Link>
+                  <Link className="drop1" to="/ieee/working-team">WORKING TEAM</Link>
                 </DropdownItem>
                 <DropdownItem>
-                  <Link to="/ieee/founding-team">Founding Team</Link>
+                  <Link className="drop2" to="/ieee/founding-team">FOUNDING TEAM</Link>
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
             <NavItem>
               <NavLink>
                 <Link className="container" to="/ieee/contact">
-                  Contact
+                  CONTACT
                 </Link>
               </NavLink>
             </NavItem>
@@ -103,11 +123,11 @@ class Header extends React.Component {
     );
   }
 }
-
 function mapStateToProps(state) {
   return {
     user: state.user
   };
 }
+
 
 export default connect(mapStateToProps)(Component);

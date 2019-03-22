@@ -1,0 +1,36 @@
+.nbox{
+
+    background-color:white;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    width: 600px;
+    height: 450px;
+    position: absolute;
+    left:394px;
+    
+}
+
+.header{
+    background-color:white;
+    height: 37px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1000;
+    color:  #2d56af  ;
+}
+
+.content {
+    width: 600px;
+    height: 410px;
+    text-align: center;
+    overflow:hidden;
+    margin: 0 auto;
+
+    }
+    .content a{
+        color: black;
+    }
+    .content a:hover {
+        
+        color:grey;
+    }
