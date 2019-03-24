@@ -1,6 +1,21 @@
 .text-center{
     color:white;
-    background-color: blue ;
-    text-align-last: center;
-    padding: 1cm;
+    background-color:#2d56af ;
+   padding: 2cm;
+   padding-top: 0.6cm
 }
+.follow{
+    float: left;
+    width: 50%;
+    text-align-last: center;
+}
+.links{
+    float:right;
+    width:50%;
+    height: 40%;
+}
+.para{
+    
+}
+
+
