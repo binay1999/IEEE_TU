@@ -59,7 +59,7 @@ class Header extends React.Component {
        
         <div class="jumbotron">
             <img src="https://i.imgur.com/oWyvKlw.jpg" alt="ieee logo" class="ieeelogo" height="70px" width="250px"/>
-            <img src="https://i.imgur.com/p3I3ZCO.png" alt="banner" class="banner" height="70px" width="1000px"/>
+            <img src="https://i.imgur.com/p3I3ZCO.png" alt="banner" class="banner" height="40px" width="600px"/>
             <a class="logoright" href="http://www.tezu.ernet.in/">
               <img src="https://i.imgur.com/SFj3dEd.png" alt="tu logo" height="80px" width="80px"/>
             </a>

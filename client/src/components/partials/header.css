@@ -32,13 +32,9 @@
     padding: 0px 20px;
   }
   .banner{
-    font-size:12px;
-    float:bottom;
-    font-weight: bold;
-    padding-top: 27px;
-    padding-bottom: 0px;
-    padding-left: 350px;
-    padding-right: 0px;
+      position: relative;
+      top:25px;
+      left:170px;
   }
     .logoright{
     font-size:1px;

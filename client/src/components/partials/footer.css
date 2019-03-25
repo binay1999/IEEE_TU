@@ -1,8 +1,10 @@
 .text-center{
     color:white;
-    background-color:#2d56af ;
+    position:relative;
+    top:550px;
+     background-color:#2d56af;
    padding: 2cm;
-   padding-top: 0.6cm
+   padding-top: 0.6cm;
 }
 .follow{
     float: left;
@@ -14,8 +16,7 @@
     width:50%;
     height: 40%;
 }
-.para{
-    
+.links a{
+    color:white !important;
 }
-
 
