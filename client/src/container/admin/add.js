@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addEvent, clearNewEvent } from "../../actions";
 
+
 class AddEvent extends Component {
   state = {
     formdata: {
