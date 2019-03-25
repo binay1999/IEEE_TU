@@ -21,8 +21,12 @@ body{margin:0px;}
 }
 #slider { 
     overflow: hidden; 
-    position: absolute;
-    left:100px;
+    position: relative;
+    top:10px;
+    left:9px;
+    height:400px;
+    width:870px;
+    
 }
 
  figure img {
