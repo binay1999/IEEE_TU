@@ -1,7 +1,7 @@
 .text-center{
     color:white;
-    position:relative;
-    top:550px;
+    position:relative !important;
+    top:600px !important;
      background-color:#2d56af;
    padding: 2cm;
    padding-top: 0.6cm;

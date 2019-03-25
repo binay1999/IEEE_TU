@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions";
+import './login.css'
 
 class Login extends Component {
   state = {
@@ -32,14 +33,16 @@ class Login extends Component {
   render() {
     let user = this.props.user;
     return (
-      <div>
+      <div class="loginpage">
         {user.login.isAuth === null || user.login.error === true ? (
           <form onSubmit={this.submitForm}>
-            <div className="container">
-              <h3 className="text-center">Admin Login</h3>
+           <div class="adminheader">ADMIN LOGIN</div>
+           
+            <div className="container" id="loginbox">
               <input
                 className="form-control"
                 type="email"
+                id="eemail"
                 placeholder="Enter your email"
                 value={this.state.email}
                 onChange={this.handleInputEmail}
@@ -47,14 +50,15 @@ class Login extends Component {
               />
               <input
                 className="form-control"
+                id="epass"
                 type="password"
                 placeholder="Enter your password"
                 value={this.state.password}
                 onChange={this.handleInputPassword}
                 required
               />
-              <button className="btn btn-block btn-primary" type="submit">
-                Login
+              <button id="elogin"className="btn btn-block btn-primary" type="submit">
+                LOGIN
               </button>
 
               <div>{user.login ? <div>{user.login.message}</div> : null}</div>
