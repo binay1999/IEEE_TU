@@ -1,10 +1,13 @@
+.mainfooter{
+position: relative; 
+top:100px;
+padding-top:50px;
+}
 .text-center{
     color:white;
     position:relative !important;
-    top:600px !important;
      background-color:#2d56af;
-   padding: 2cm;
-   padding-top: 0.6cm;
+     padding:50px;
 }
 .follow{
     float: left;
@@ -15,8 +18,12 @@
     float:right;
     width:50%;
     height: 40%;
+    position:relative;
+    top:-11px;
 }
 .links a{
     color:white !important;
 }
-
+.mainfooter h4{
+    font-weight: bold !important;
+}

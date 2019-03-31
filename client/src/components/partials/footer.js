@@ -2,11 +2,11 @@ import React from "react";
 import "./footer.css";
 const Footer = props => {
   return (
-    <footer>
+    <footer class="mainfooter">
       <div class="text-center">
       <div class="follow">
       <h4>FOLLOW US</h4>
-      <a  href="https://www.facebook.com/ieee.tezu?ref=br_tf" rel="nofollow" title="Follow us on FaceBook"><img src="https://i.imgur.com/G5TqOyK.png" width="25" alt="FBpage"  /></a>&nbsp;
+      <a  href="https://www.facebook.com/ieee.tezu" rel="nofollow" title="Follow us on FaceBook"><img src="https://i.imgur.com/G5TqOyK.png" width="25" alt="FBpage"  /></a>&nbsp;
       <a  href="https://www.youtube.com/channel/UC2AOTkwhNmrRfTi7M532FJw" rel="nofollow" title="Follow us on YouTube"><img src="https://i.imgur.com/KoTtyp2.jpg" width="25" alt="YOUTUBEpage"  /></a>     
       </div>
       <div class="links">
