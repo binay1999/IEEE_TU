@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addEvent, clearNewEvent } from "../../actions";
+import './add.css'
 
 
 class AddEvent extends Component {
@@ -53,43 +54,47 @@ class AddEvent extends Component {
           <h2 className="text-center">Add Event</h2>
           <hr />
           <div>
-            <label>Title:</label>
+           
             <input
               className="form-control"
+              id="title"
               type="text"
               placeholder="Enter the Title"
               value={this.state.formdata.title}
               onChange={event => this.handleInput(event, "title")}
             />
             <br />
-            <label>Image:</label>
+           
             <input
               className="form-control"
+              id="image"
               type="text"
               placeholder="Enter the Image"
               value={this.state.formdata.image}
               onChange={event => this.handleInput(event, "image")}
             />
             <br />
-            <label>Date:</label>
+           
             <input
               className="form-control"
+              id="date"
               type="date"
               value={this.state.formdata.date}
               onChange={event => this.handleInput(event, "date")}
             />
             <br />
-            <label>Description:</label>
+           
             <textarea
               value={this.state.formdata.description}
               rows="11"
+              id="desc"
               className="form-control"
               placeholder="Enter a description"
               onChange={event => this.handleInput(event, "description")}
             />
           </div>
           <br />
-          <button className="btn btn-block btn-warning" type="submit">
+          <button id="addevent"className="btn btn-block btn-warning" type="submit">
             Add Event
           </button>
           <div>{this.state.error}</div>

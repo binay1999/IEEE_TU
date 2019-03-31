@@ -1,0 +1,58 @@
+ .addadminhead{   
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color:#2d56af !important ;
+    font-size: 35px;
+    position: relative;
+    top: 10px;
+    font-weight: 900;
+    color:snow;
+ }
+ #name{ height:50px;
+    font-size:17px;
+    position: relative;
+    top:15px;
+    border: 1px solid #2d56af;
+    background-color: white;
+    border-radius: 25px;
+
+ }
+ #lastname{ height:50px;
+    font-size:17px;
+    position: relative;
+    top:20px;
+    border: 1px solid #2d56af;
+    background-color: white;
+    border-radius: 25px;
+
+ }
+ #email{ height:50px;
+    font-size:17px;
+    position: relative;
+    top:25px;
+    border: 1px solid #2d56af;
+    background-color: white;
+    border-radius: 25px;
+
+ }
+ #pass{ 
+     height:50px;
+    font-size:17px;
+    position: relative;
+    top:30px;
+    border: 1px solid #2d56af;
+    background-color: white;
+    border-radius: 25px;
+}
+#addadmin{
+    height:50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:20px;
+    position: relative;
+    top:30px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background-color:#4CC552;
+   font-weight: 900;
+}

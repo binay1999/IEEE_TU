@@ -1,0 +1,49 @@
+#title{
+    height:50px;
+    font-size:17px;
+    position: relative;
+    top:25px;
+    border: 1px solid #2d56af;
+    background-color: white;
+    border-radius: 25px;
+}
+#image{
+    height:50px;
+    font-size:17px;
+    position: relative;
+    top:25px;
+    border: 1px solid #2d56af;
+    background-color: white;
+    border-radius: 25px;
+}
+#date{ 
+    height:50px;
+    font-size:17px;
+    position: relative;
+    top:25px;
+    border: 1px solid #2d56af;
+    background-color: white;
+    border-radius: 25px;
+
+}
+#desc{
+    height:50px;
+    font-size:17px;
+    position: relative;
+    top:25px;
+    border: 1px solid #2d56af;
+    background-color: white;
+    border-radius: 25px;
+}
+#addevent
+{
+    height:50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:20px;
+    position: relative;
+    top:100px;
+    border: 1px solid #ddd;
+  border-radius: 25px;
+  background-color:#4CC552;
+  font-weight: 900;
+}

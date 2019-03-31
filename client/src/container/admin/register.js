@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUsers, userRegister } from "../../actions";
+import './register.css'
 class Register extends Component {
   state = {
     name: "",
@@ -72,35 +73,39 @@ class Register extends Component {
     return (
       <div>
         <form onSubmit={this.submitForm} className="container">
-          <h2>Add Admin</h2>
+          <div class="addadminhead">ADD ADMIN</div>
           <div>
-            <label>Name</label>
+           
             <input
               className="form-control"
+              id="name"
               type="text"
               placeholder="Enter Name"
               value={this.state.name}
               onChange={this.handleInputName}
             />
-            <label>Lastname</label>
+            
             <input
               className="form-control"
+              id="lastname"
               type="text"
               placeholder="Enter Lastname"
               value={this.state.lastname}
               onChange={this.handleInputLastname}
             />
-            <label>Email</label>
+            
             <input
               className="form-control"
+              id="email"
               type="email"
               placeholder="Enter Email"
               value={this.state.email}
               onChange={this.handleInputEmail}
             />
-            <label>Password</label>
+          
             <input
               className="form-control"
+              id="pass"
               type="password"
               placeholder="Enter password"
               value={this.state.password}
@@ -108,7 +113,7 @@ class Register extends Component {
             />
           </div>
           <br />
-          <button type="submit" className="btn btn-success btn-block">
+          <button id="addadmin" type="submit" className="btn btn-success btn-block">
             Add Admin
           </button>
 
@@ -117,8 +122,8 @@ class Register extends Component {
         <br />
 
         <div className="container">
-          <h4>Current Admins</h4>
-          <table>
+          <h4>Current Admin</h4>
+          <table id="t01">
             <thead>
               <tr>
                 <th>Name</th>
