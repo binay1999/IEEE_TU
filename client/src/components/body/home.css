@@ -2,12 +2,10 @@
 #slider { 
     overflow: hidden; 
     position: relative;
-    top:0px;
-    left:15px;
-    height:405px;
-    width:860px;
-    
-    
+    top:-23.8px;
+    left:-6px;
+    height:500px;
+    width:900px; 
 }
 
 @import url(https://fonts.googleapis.com/css?family=Istok+Web);
@@ -48,11 +46,51 @@ figure.slider figure {
 }
 figure.slider figure figcaption { 
   position: absolute;
-  bottom: 75px;
+  bottom: 0px;
   background: rgba(0,0,0,0.4);
   color: #fff; width: 100%;
   font-size: 2rem; padding: .6rem; 
 }
 
+.about{
+  
+  position:relative;
+  top:50px;
+  left:40px;
+  width:1400px;
+  padding: 0px 0px;
+  background-color: snow;
+ 
+}
 
+.abouttuieee{
+  position:relative;
+  top:25px;
+}
 
+.aboutieee .header{
+  background-color: #2d56af;
+  height:45px;
+  color:white;
+  font-size: 28px;
+  text-align: center;
+}
+.abouttuieee .header{
+  background-color: #2d56af;
+  height:45px;
+  color:white;
+  font-size: 28px;
+  text-align: center;
+}
+.aboutieee .text{
+  padding: 30px 0px;
+  font-size: 18px;
+}
+.abouttuieee .text{
+  padding: 30px 0px;
+  font-size: 18px;
+}
+
+.aboutieee .text a{
+color:#2d56af;
+}
