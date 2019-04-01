@@ -71,9 +71,11 @@ class Register extends Component {
   render() {
     let user = this.props.user;
     return (
-      <div>
+      <div class="admin">
+      <div class="card border-primary mb-3">
         <form onSubmit={this.submitForm} className="container">
-          <div class="addadminhead">ADD ADMIN</div>
+          <div class="addadminhead">ADD ADMIN
+          </div>
           <div>
            
             <input
@@ -118,12 +120,14 @@ class Register extends Component {
           </button>
 
           <div>{this.state.error}</div>
+        
         </form>
+  
         <br />
 
         <div className="container">
-          <h4>Current Admin</h4>
-          <table id="t01">
+          <div class="curradmin">Current Admin</div>
+          <table class="table table-striped">
             <thead>
               <tr>
                 <th>Name</th>
@@ -133,8 +137,9 @@ class Register extends Component {
             </thead>
             <tbody>{this.showUsers(user)}</tbody>
           </table>
+        </div> 
         </div>
-      </div>
+ </div>
     );
   }
 }

@@ -50,11 +50,14 @@ class AddEvent extends Component {
   render() {
     return (
       <div className="container">
+     
+       <div class="card border-primary mb-3">
+       
         <form onSubmit={this.submitForm}>
-          <h2 className="text-center">Add Event</h2>
+         <div class="addeventhead">Add Event</div>
           <hr />
           <div>
-           
+           <div class="w-80 p-1">
             <input
               className="form-control"
               id="title"
@@ -98,7 +101,9 @@ class AddEvent extends Component {
             Add Event
           </button>
           <div>{this.state.error}</div>
+          </div>
         </form>
+        </div>
       </div>
     );
   }

@@ -66,10 +66,12 @@ class EditEvent extends PureComponent {
         {this.props.events.updateEvent ? (
           <div>{this.redirectUser(0)}</div>
         ) : null}
-
+       <div class="card border-primary mb-3">
         <form onSubmit={this.submitForm}>
-          <h2 className="text-center">Edit Event</h2>
+        
+         <div class="editeventhead">Edit Event</div>
           <hr />
+        
           <div>
            
             <input
@@ -115,9 +117,11 @@ class EditEvent extends PureComponent {
             Edit Event
           </button>
           <div id="deleteevent" className="btn btn-block btn-danger" onClick={this.deletePost}>
-            Delete Post
+            Delete Event
           </div>
+        
         </form>
+      </div>
 
         {this.props.events.postDeleted ? (
           <div className="btn btn-block btn-success">
